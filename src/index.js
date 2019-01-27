@@ -1,12 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import Main from './Components/Main.js';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
+import Main from './components/Main';
+import Single from './components/Single';
+import LandingPage from './components/LandingPage';
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+import { BrowserRouter, Route } from 'react-router-dom';
+/* Import CSS */
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Root = function () {
+    return (
+        <BrowserRouter>
+            <div>
+                <Route exact path="/" component={LandingPage} />
+                <Route path="/search/:searchTerm" component={Main} />
+                <Route path="/main" component={Main} />
+                <Route path="/recording/:recordingId/:recordingSlug" component={Single} />
+            </div>
+        </BrowserRouter>
+    );
+};
+
+render(<Root />, document.querySelector('#root'));

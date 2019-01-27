@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
-
-import './Main.css';
-
-
 import Header from './Header';
 
+import logo from "./logo.jpg";
 
-class Main extends Component {
+
+class LandingPage extends Component {
     render() {
         return (
-
-            <div className="wrapper">
+            <div className="logo">
                 <Header siteName="Total Black" />
-
-
+                <img src={logo} alt="logo" />
             </div>
         );
     }
 }
 
-export default Main;
-
-
+export default LandingPage;
