@@ -12,7 +12,7 @@ class Main extends Component {
         return (
 
             <div className="wrapper">
-                <Header />
+                <Header siteName="Total Black" />
 
                 <div className="logo">
                     <img src={logo} alt="logo" />
