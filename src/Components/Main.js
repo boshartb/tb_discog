@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './Main.css';
-import logo from './logo.jpg';
+import logo from "./logo.jpg";
 
 
 import Header from './Header';
