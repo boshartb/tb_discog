@@ -11,7 +11,6 @@ class Main extends Component {
         return (
 
             <div className="wrapper">
-                <Header siteName="Total Black" />
 
 
             </div>

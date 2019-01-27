@@ -8,7 +8,6 @@ class LandingPage extends Component {
     render() {
         return (
             <div className="logo">
-                <Header siteName="Total Black" />
                 <img src={logo} alt="logo" />
             </div>
         );
