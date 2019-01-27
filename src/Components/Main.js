@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 
+import Recording from "./Recording"
 import './Main.css';
-
-
-import Header from './Header';
 
 
 class Main extends Component {
     render() {
         return (
+            <div className="main">
+                <div className="wrapper">
+                    <Recording />
 
-            <div className="wrapper">
-
-
+                </div>
             </div>
         );
     }

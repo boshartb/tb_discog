@@ -4,7 +4,7 @@ class Recording extends Component {
     render() {
         return (
             <div className="recording">
-                Recording will go here
+                <h2>Recording will go here</h2>
             </div>
         );
     }
