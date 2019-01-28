@@ -6,10 +6,13 @@ class NavBar extends Component {
     render() {
         return (
             <div className="NavBar">
-                <Link to="/">Main</Link>{' '}
+                <Link to="/">Home</Link>{' '}
+                <a href="https://soundcloud.com/totalblack">SAMPLE</a>{' '}
                 <Link to="/events">Events</Link>{' '}
-                <Link to="/recording">Recording</Link>{' '}
-            </div>
+                <a href="http://totalblack.bigcartel.com">STORE</a>{' '}
+                <a href="http://totalblack.bandcamp.com/">DIGITAL</a>
+                <Link to="/main" > Releases</Link > {' '}
+            </div >
         );
     }
 }
