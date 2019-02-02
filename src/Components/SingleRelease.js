@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+import SingleData from "./SingleData"
+import SingleReleaseInfo from "./SingleReleaseInfo"
+
 class SingleRelease extends Component {
     render() {
         return (
             <div className="single-release">
-                <h2>A SingleRelease recording goes here </h2>
+                <SingleReleaseInfo single={SingleData} />
             </div>
         );
     }

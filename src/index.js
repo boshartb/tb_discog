@@ -23,6 +23,7 @@ const Root = function () {
                     <Route path="/search/:searchTerm" component={ReleasePage} />
                     <Route path="/ReleasePage" component={ReleasePage} />
                     <Route path="/events" component={Events} />
+                    <Route path="/singlerelease" component={SingleRelease} />
                     <Route path="/releases/:releasesId/:releasesSlug" component={SingleRelease} />
                 </div>
             </div>
