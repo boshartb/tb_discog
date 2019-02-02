@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Release from "./Release"
 import './Main.css';
+import RecordingFilter from './RecordingFilter';
 
 
 class Main extends Component {
@@ -37,7 +38,7 @@ class Main extends Component {
         return (
             <div className="main">
                 <div className="wrapper">
-
+                    <RecordingFilter />
                     {discog}
                 </div>
             </div>
