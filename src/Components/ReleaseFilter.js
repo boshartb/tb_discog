@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-class RecordingFilter extends Component {
-    render() {
-        return (
-            <div className="recordings">
-                RecordingFilter go here
-            </div>
-        );
-    }
-}
+const RecordingFilter = props =>
+    <div>
+        <label htmlFor="recording-filter">Release Info: </label>
+        <input type="text" value={props.value} onChange={props.onChange} name="recording-filter" />
+    </div>
 
 export default RecordingFilter;
