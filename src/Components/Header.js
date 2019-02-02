@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import './Main.css';
+import './ReleasePage.css';
 
 class Header extends Component {
     static propTypes = {

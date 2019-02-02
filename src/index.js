@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 
-import Main from './Components/Main';
 import Header from './Components/Header';
-import Single from './Components/Single';
-import LandingPage from './Components/LandingPage';
 import NavBar from './Components/NavBar';
+import Main from './Components/Main';
 import Events from './Components/Events';
+import ReleasePage from './Components/ReleasePage';
+import SingleRelease from './Components/SingleRelease';
 
 
 import './index.css';
@@ -19,11 +19,11 @@ const Root = function () {
                 <Header siteName="Total Black" />
                 <NavBar />
                 <div>
-                    <Route exact path="/" component={LandingPage} />
-                    <Route path="/search/:searchTerm" component={Main} />
-                    <Route path="/main" component={Main} />
+                    <Route exact path="/" component={Main} />
+                    <Route path="/search/:searchTerm" component={ReleasePage} />
+                    <Route path="/ReleasePage" component={ReleasePage} />
                     <Route path="/events" component={Events} />
-                    <Route path="/releases/:releasesId/:releasesSlug" component={Single} />
+                    <Route path="/releases/:releasesId/:releasesSlug" component={SingleRelease} />
                 </div>
             </div>
         </BrowserRouter>

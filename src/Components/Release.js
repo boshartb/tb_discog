@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Single from "./Single"
 
 
 class Release extends Component {
