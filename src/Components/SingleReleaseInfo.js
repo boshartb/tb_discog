@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class SingleReleaseInfo extends Component {
     render() {
-
         return (
             <div>
                 <h2>Single Rlease Info</h2>

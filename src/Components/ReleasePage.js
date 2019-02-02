@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Release from "./Release"
 import './ReleasePage.css';
-import ReleaseFilter from './ReleaseFilter';
+import ReleaseSectionFilter from './ReleaseFilter';
 import ReleaseList from './ReleaseList';
 
 class ReleasePage extends Component {
@@ -16,8 +16,8 @@ class ReleasePage extends Component {
     // }
 
     state = {
-        releases: [],
-        isLoaded: false
+        release: [],
+        isLoaded: false,
     }
 
     componentDidMount() {
@@ -48,8 +48,8 @@ class ReleasePage extends Component {
             <div className="ReleasePage">
                 <div className="wrapper">
                     <h1>Discogs Release Page</h1>
-                    <ReleaseFilter />
-                    <ReleaseList release={releaseList}> </ReleaseList>
+                    {/* <ReleaseSectionFilter releases={releaseList}> </ReleaseSectionFilter> */}
+                    <Release release={releaseList}></Release>
                 </div>
             </div>
         );

@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-class ReleaseList extends Component {
-    render() {
-        return (
-            <div className="releaselist">
-                {this.props.release}
-            </div>
-        );
-    }
-}
+const ReleaseList = props =>
+    <div className="release-list">
+        {props.release}
+    </div>
 
-export default ReleaseList;
+
+export default ReleaseList
