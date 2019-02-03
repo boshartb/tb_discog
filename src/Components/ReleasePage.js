@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import Release from "./Release"
 import './ReleasePage.css';
-import ReleaseFilter from './ReleaseFilter';
-import ReleaseList from './ReleaseList';
-import ReleaseSectionPage from './ReleaseSectionFilter';
+// import ReleaseFilter from './ReleaseFilter';
+// import ReleaseList from './ReleaseList';
+// import ReleaseSectionPage from './ReleaseSectionFilter';
 
 class ReleasePage extends Component {
 
@@ -39,7 +39,7 @@ class ReleasePage extends Component {
         return (
             <div className="ReleasePage">
                 <div className="wrapper">
-                    <h1>Discogs Release Page</h1>
+                    <h1>Discogs Release Page </h1>
                     {/* <ReleaseSectionPage releases={releaseList} > </ReleaseSectionPage> */}
                     {/* <ReleaseList releases={releaseList} > </ReleaseList> */}
                     <div>{releaseList}</div>

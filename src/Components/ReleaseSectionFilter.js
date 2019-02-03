@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Release from "./Release"
 import './ReleasePage.css';
 import ReleaseFilter from './ReleaseFilter';
 import ReleaseList from './ReleaseList';
@@ -12,7 +11,7 @@ import UnmatchingButton from './UnmatchingButton'
 class ReleaseSectionPage extends Component {
 
     state = {
-        releasesToDisplay: this.props.releases,
+        releasesToDisplay: this.props.release,
         unmatchedReleases: [],
         filterValue: '',
         isMatching: false
@@ -66,7 +65,7 @@ class ReleaseSectionPage extends Component {
             <div>
                 <ReleaseFilter value={this.state.filterValue} onChange={this.handleFilterChange} />
                 {button}
-                <ReleaseList releases={releaseChoice} />
+                <ReleaseList release={releaseChoice} />
             </div>
         )
     }

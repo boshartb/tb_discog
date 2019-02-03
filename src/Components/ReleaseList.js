@@ -2,7 +2,7 @@ import React from 'react'
 
 const ReleaseList = props =>
     <div className="release-list">
-        {props.releases}
+        {props.release}
     </div>
 
 
