@@ -42,14 +42,14 @@ class App extends Component {
             <div>
               <Route exact path="/" component={Main} />
               <Route path="/search/:searchTerm" component={ReleasePage} />
-              <Route path="/ReleasePage" render={(routeProps) => (<ReleasePage {...routeProps} selectRelease={this.selectRelease} />)} />
+              <Route path="/ReleasePage"
+                render={(routeProps) =>
+                  (<ReleasePage {...routeProps} selectRelease={this.selectRelease} />)} />
               <Route path="/events" component={Events} />
               <Route path="/SingleRelease" render={(routeProps) => (<SingleRelease {...routeProps} releaseUrl={this.state.releaseUrl} />)} />
-              />
-                </div>
+            </div>
           </div>
         </BrowserRouter>
-        );
       </div>
     );
   }
