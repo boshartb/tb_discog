@@ -21,12 +21,17 @@ class Release extends Component {
         return (
             <div className="release-box">
                 <a onClick={this.handleSubmit}  >
-                    <h3>{this.props.release.artist}</h3>
-                    <h3>{this.props.release.title}</h3>
-                    <h3>{this.props.release.year}</h3>
-                    <h3>{this.props.release.catno}</h3>
+                    <ul>
+                        <p>
+                            <div classname="artist">{this.props.release.artist}:  </div>
+                            <div classname="title">{this.props.release.title}: </div>
+                            <div ckassname="year">{this.props.release.year} </div>
+                            <div className="release"> {this.props.release.catno}</div>
+
+                        </p>
+                    </ul>
                 </a >
-            </div>
+            </div >
         );
     }
 }

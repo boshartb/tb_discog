@@ -29,12 +29,13 @@ class SingleRelease extends Component {
 
     render() {
         const { releaseUrl } = this.props;
+
         let { isLoaded, singles } = this.state;
         if (!isLoaded) {
             return <div>Loading...</div>;
         }
         let releaseList = singles.singles.map(single => (
-            <SingleReleaseInfo key={single.id} single={single} />
+            <SingleReleaseInfo key={single.id} single={single} releaseUrl={releaseUrl} />
         ))
 
 

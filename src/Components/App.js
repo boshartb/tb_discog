@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 
 
-import './ReleasePage.css';
+
 
 
 import Header from './Header';
