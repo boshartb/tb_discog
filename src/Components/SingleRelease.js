@@ -6,7 +6,12 @@ import SingleReleaseInfo from "./SingleReleaseInfo"
 class SingleRelease extends Component {
 
     // 3. call the fetch of the api
-
+    /*
+    const santizedResult = {
+        artistame: result.artist,
+        year result.year
+    }
+    */
 
 
     render() {

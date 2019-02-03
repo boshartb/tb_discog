@@ -10,7 +10,6 @@ class Release extends Component {
     }
 
     handleSubmit = () => {
-        console.log("in release")
         this.props.selectRelease(this.props.release.resource_url)
         this.setState(() => ({ toSingleRelease: true }))
     }

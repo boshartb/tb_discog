@@ -19,9 +19,24 @@ class ReleasePage extends Component {
         fetch('https://api.discogs.com//labels/528464/releases?page=1&per_page=100')
             .then(res => res.json())
             .then(json => {
+
+                // santizied data here
+
+                //     const santiztedREult ={};
+                //     or  
+                //     this.setState({
+                //         isLoaded: true,
+                //         releases: {
+
+                //         }
+                //     })
+                // });
+
                 this.setState({
                     isLoaded: true,
-                    releases: json
+                    releases: {
+
+                    }
                 })
             });
     }
