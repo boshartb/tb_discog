@@ -42,6 +42,7 @@ class ReleasePage extends Component {
                     <h1>Discogs Release Page</h1>
                     {/* <ReleaseSectionPage releases={releaseList} > </ReleaseSectionPage> */}
                     {/* <ReleaseList releases={releaseList} > </ReleaseList> */}
+                    <div>{releaseList}</div>
                 </div>
             </div>
         );
