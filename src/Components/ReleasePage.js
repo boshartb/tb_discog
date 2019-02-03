@@ -20,6 +20,7 @@ class ReleasePage extends Component {
             .then(res => res.json())
             .then(json => {
 
+
                 // santizied data here
 
                 //     const santiztedREult ={};
@@ -34,9 +35,7 @@ class ReleasePage extends Component {
 
                 this.setState({
                     isLoaded: true,
-                    releases: {
-
-                    }
+                    releases: json
                 })
             });
     }
