@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 
+
 import './ReleasePage.css';
 
 
@@ -27,9 +28,8 @@ class App extends Component {
   selectRelease = (releaseUrl) => {
     this.selectReleaseUrl(releaseUrl)
     // 2. Make sure it routes
-    return (
-      <Redirect to="/SingleRelease" />
-    )
+    // redirect from method not workinjg
+
   }
   render() {
     return (
@@ -46,7 +46,7 @@ class App extends Component {
                 render={(routeProps) =>
                   (<ReleasePage {...routeProps} selectRelease={this.selectRelease} />)} />
               <Route path="/events" component={Events} />
-              <Route path="/SingleRelease" render={(routeProps) => (<SingleRelease {...routeProps} releaseUrl={this.state.releaseUrl} />)} />
+              <Route path="/single-release" render={(routeProps) => (<SingleRelease {...routeProps} releaseUrl={this.state.releaseUrl} />)} />
             </div>
           </div>
         </BrowserRouter>
