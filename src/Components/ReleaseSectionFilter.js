@@ -4,32 +4,19 @@ import Release from "./Release"
 import './ReleasePage.css';
 import ReleaseFilter from './ReleaseFilter';
 import ReleaseList from './ReleaseList';
-import SearchButton from './SearchButton'
-import ClearButton from './ClearButton'
-import ReleasePage from './ReleasePage';
+import MatchingButton from './MatchingButton'
+import UnmatchingButton from './UnmatchingButton'
+
 
 
 class ReleaseSectionPage extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         releases: [],
-    //         isLoaded: false
-    //     }
-    // }
-
     state = {
-        // releases: [],
-        isLoaded: false,
-        releasesToDisplay: this.props.release,
+        releasesToDisplay: this.props.releases,
         unmatchedReleases: [],
         filterValue: '',
         isMatching: false
     }
-
-
-
 
     handleMatchingClick = () => {
         this.setState({ isMatching: true })
@@ -45,7 +32,7 @@ class ReleaseSectionPage extends Component {
         const filterValue = event.target.value
 
         this.setState((prevState, props) => {
-            const filteredReleasesList = props.releases.filter(release =>
+            const filteredReleaseList = props.releases.filter(release =>
                 release.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase())
             )
 
@@ -54,7 +41,7 @@ class ReleaseSectionPage extends Component {
             )
 
             return {
-                releasesToDisplay: filteredReleasesList,
+                releasesToDisplay: filteredReleaseList,
                 unmatchedReleases: unmatchedReleases,
                 filterValue
             }
@@ -67,25 +54,23 @@ class ReleaseSectionPage extends Component {
         let releaseChoice = null
 
         if (this.state.isMatching) {
-            button = <ClearButton onClick={this.handleUnmatchingClick} />
+            button = <UnmatchingButton onClick={this.handleUnmatchingClick} />
             releaseChoice = this.state.unmatchedReleases
         }
         else {
-            button = <SearchButton onClick={this.handleMatchingClick} />
+            button = <MatchingButton onClick={this.handleMatchingClick} />
             releaseChoice = this.state.releasesToDisplay
         }
 
         return (
-            <div className="ReleasePage">
-                <div className="wrapper">
-                    <h1>Discogs Release Page</h1>
-                    <ReleaseFilter value={this.state.filterValue} onChange={this.handleFilterChange} />
-                    {button}
-                    <ReleaseList releases={releaseList}> </ReleaseList>
-                </div>
+            <div>
+                <ReleaseFilter value={this.state.filterValue} onChange={this.handleFilterChange} />
+                {button}
+                <ReleaseList releases={releaseChoice} />
             </div>
-        );
+        )
     }
 }
+
 
 export default ReleaseSectionPage;
