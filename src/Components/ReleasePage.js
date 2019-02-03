@@ -2,24 +2,19 @@ import React, { Component } from 'react';
 
 import Release from "./Release"
 import './ReleasePage.css';
-import ReleaseSectionFilter from './ReleaseFilter';
+import ReleaseFilter from './ReleaseFilter';
 import ReleaseList from './ReleaseList';
+import ReleaseSectionPage from './ReleaseSectionFilter';
 
 class ReleasePage extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         releases: [],
-    //         isLoaded: false
-    //     }
-    // }
-
-    state = {
-        release: [],
-        isLoaded: false,
+    constructor(props) {
+        super(props);
+        this.state = {
+            releases: [],
+            isLoaded: false
+        }
     }
-
     componentDidMount() {
         fetch('https://api.discogs.com//labels/528464/releases?page=1&per_page=100')
             .then(res => res.json())
@@ -36,11 +31,8 @@ class ReleasePage extends Component {
         if (!isLoaded) {
             return <div>Loading...</div>;
         }
-
         let releaseList = releases.releases.map(release => (
-            <Release key="{release.id}" release={release} />
-
-
+            <Release key={release.id} release={release} selectRelease={this.props.selectRelease} />
 
         ))
 
@@ -48,8 +40,8 @@ class ReleasePage extends Component {
             <div className="ReleasePage">
                 <div className="wrapper">
                     <h1>Discogs Release Page</h1>
-                    {/* <ReleaseSectionFilter releases={releaseList}> </ReleaseSectionFilter> */}
-                    <Release release={releaseList}></Release>
+                    {/* <ReleaseSectionPage releases={releaseList} > </ReleaseSectionPage> */}
+                    <ReleaseList releases={releaseList} > </ReleaseList>
                 </div>
             </div>
         );
@@ -57,5 +49,3 @@ class ReleasePage extends Component {
 }
 
 export default ReleasePage;
-
-
