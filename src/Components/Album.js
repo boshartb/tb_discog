@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AristComponent from "./AristComponent";
+import ArtistComponent from "./ArtistComponent";
 import GenreComponent from "./GenreComponent";
 import ImageComponent from "./ImageComponent";
 
@@ -19,14 +19,15 @@ class Album extends Component {
         this.setState({
           isLoaded: true,
           artists: json.artists,
-          genres: json.genres
+          genres: json.genres,
+          images: json.images,
         });
       });
   }
 
   render() {
-    const { genres, images, artists } = this.props;
-    const renderArtists = artists.map(artist => <AristComponent artist={artist} />);
+    const { artists, images, genres } = this.props;
+    const renderArtists = artists.map(artist => <ArtistComponent artist={artist} />);
     const renderGenres = genres.map(genre => <GenreComponent genre={genre} />);
     const renderImages = images.map(image => <ImageComponent image={image} />);
 
