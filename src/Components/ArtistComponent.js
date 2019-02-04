@@ -4,7 +4,7 @@ class AlbumArtists extends Component {
   render() {
     return (
       <div>
-        <p> </p>
+        <p>{this.props.artist.name}</p>
       </div>
     );
   }

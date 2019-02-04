@@ -26,16 +26,22 @@ class Album extends Component {
   }
 
   render() {
-    const { artists, images, genres } = this.props;
-    const renderArtists = artists.map(artist => <ArtistComponent artist={artist} />);
-    const renderGenres = genres.map(genre => <GenreComponent genre={genre} />);
-    const renderImages = images.map(image => <ImageComponent image={image} />);
+    const { artists, images, genres } = this.state;
+    const renderArtists = artists.map((artist, id) => (
+      <ArtistComponent artist={artist} key={id} />
+    ));
+    const renderGenres = genres.map((genre, id) => (
+      <GenreComponent genre={genre} key={id} />
+    ));
+    const renderImages = images.map((image, id) => (
+      <ImageComponent image={image} key={id} />
+    ));
 
     return (
       <div>
-        {renderArtists()}
-        {renderGenres()}
-        {renderImages()}
+        {renderArtists}
+        {renderGenres}
+        {renderImages}
       </div>
     );
   }
