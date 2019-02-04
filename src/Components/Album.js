@@ -5,12 +5,12 @@ import AlbumInfo from "./AlbumsInfo"
 class Album extends Component {
     state = {
         albumsData: [],
-        isLoaded: false
+        isLoaded: false,
     }
 
     componentDidMount() {
         // fetch('${releaseUrl}')
-        fetch('https://api.discogs.com/labels/528464/releases')
+        fetch('https://api.discogs.com/releases/10402242')
             .then(res => res.json())
             .then(json => {
 
@@ -22,14 +22,14 @@ class Album extends Component {
     }
 
     render() {
-        const { releaseUrl } = this.props;
+        // const { releaseUrl } = this.props;
 
         let { isLoaded, albumsData } = this.state;
         if (!isLoaded) {
             return <div>Loading...</div>;
         }
         let albumDataInfo = albumsData.map(album => (
-            <AlbumInfo key={album.id} album={album} releaseUrl={releaseUrl} />
+            <AlbumInfo key={album.id} album={album} />
         ))
 
         return (
