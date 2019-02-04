@@ -12,6 +12,7 @@ class Album extends Component {
   };
 
   componentDidMount() {
+    const releaseUrl = this.props.releaseUrl
     // fetch('${releaseUrl}')
     fetch("https://api.discogs.com/releases/10402242")
       .then(res => res.json())
