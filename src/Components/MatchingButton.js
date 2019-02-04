@@ -1,8 +1,8 @@
 import React from 'react'
 
-const SearchButton = props =>
+const MatchingButton = props =>
     <button onClick={props.onClick}>
         Search
   </button>
 
-export default SearchButton
+export default MatchingButton

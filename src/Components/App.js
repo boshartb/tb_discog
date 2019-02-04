@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 
 
-
-
-
 import Header from './Header';
 import NavBar from './NavBar';
 import Main from './Main';
 import Events from './Events';
-import ReleasePage from './ReleasePage';
-import SingleRelease from './SingleRelease';
-
+import Releases from './Releases';
+import Album from './Album';
+import Fruits from "./Fruits"
 
 class App extends Component {
   // app state
@@ -41,12 +38,12 @@ class App extends Component {
 
             <div>
               <Route exact path="/" component={Main} />
-              <Route path="/search/:searchTerm" component={ReleasePage} />
-              <Route path="/ReleasePage"
+              <Route path="/fruits" component={Fruits} />
+              <Route path="/Releases"
                 render={(routeProps) =>
-                  (<ReleasePage {...routeProps} selectRelease={this.selectRelease} />)} />
+                  (<Releases {...routeProps} selectRelease={this.selectRelease} />)} />
               <Route path="/events" component={Events} />
-              <Route path="/single-release" render={(routeProps) => (<SingleRelease {...routeProps} releaseUrl={this.state.releaseUrl} />)} />
+              <Route path="/album" render={(routeProps) => (<Album {...routeProps} releaseUrl={this.state.releaseUrl} />)} />
             </div>
           </div>
         </BrowserRouter>

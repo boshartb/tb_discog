@@ -11,7 +11,7 @@ class NavBar extends Component {
                 <Link to="/events">Events</Link>{' '}
                 <a href="http://totalblack.bigcartel.com">STORE</a>{' '}
                 <a href="http://totalblack.bandcamp.com/">DIGITAL</a>
-                <Link to="/ReleasePage" > Releases</Link > {' '}
+                <Link to="/Releases" > Releases</Link > {' '}
             </div >
         );
     }

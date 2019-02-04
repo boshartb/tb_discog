@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
 
-class Release extends Component {
+class ReleaseInfo extends Component {
 
     // look into why redirect did not work. look up best practise
     state = {
@@ -15,11 +15,11 @@ class Release extends Component {
     }
     render() {
         if (this.state.toSingleRelease === true) {
-            return <Redirect to="/single-release" />
+            return <Redirect to="/album" />
         }
 
         return (
-            <div className="release-box">
+            <div className="release-info">
                 <a onClick={this.handleSubmit}  >
                     <ul>
                         <p>
@@ -27,7 +27,7 @@ class Release extends Component {
                             <div classname="title">{this.props.release.title}: </div>
                             <div ckassname="year">{this.props.release.year} </div>
                             <div className="release"> {this.props.release.catno}</div>
-                            <img src="{this.props.release.thumb}" className="release" />
+                            <img src="{this.props.release.thumb}" />
 
                         </p>
                     </ul>
@@ -37,5 +37,5 @@ class Release extends Component {
     }
 }
 
-export default Release;
+export default ReleaseInfo;
 
