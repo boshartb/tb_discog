@@ -1,55 +1,81 @@
-import React, { Component } from 'react';
-
-import AlbumInfo from "./AlbumsInfo"
+import React, { Component } from "react";
+import AristComponent from "./AristComponent";
+import GenreComponent from "./GenreComponent";
+import ImageComponent from "./ImageComponent";
 
 class Album extends Component {
-    state = {
-        albumsData: [],
-        isLoaded: false,
-    }
+  state = {
+    artists: [],
+    images: [],
+    genres: [],
+    isLoaded: false
+  };
 
-    componentDidMount() {
-        // fetch('${releaseUrl}')
-        fetch('https://api.discogs.com/releases/10402242')
-            .then(res => res.json())
-            .then(json => {
+  componentDidMount() {
+    // fetch('${releaseUrl}')
+    fetch("https://api.discogs.com/releases/10402242")
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          isLoaded: true,
+          artists: json.artists,
+          genres: json.genres
+        });
+      });
+  }
 
-                this.setState({
-                    isLoaded: true,
-                    albumsData: json
-                })
-            });
-    }
+  render() {
+    const { genres, images, artists } = this.props;
+    const renderArtists = artists.map(artist => <AristComponent artist={artist} />);
+    const renderGenres = genres.map(genre => <GenreComponent genre={genre} />);
+    const renderImages = images.map(image => <ImageComponent image={image} />);
 
-    render() {
-        // const { releaseUrl } = this.props;
-
-        let { isLoaded, albumsData } = this.state;
-        if (!isLoaded) {
-            return <div>Loading...</div>;
-        }
-        let albumDataInfo = albumsData.map(album => (
-            <AlbumInfo key={album.id} album={album} />
-        ))
-
-        return (
-            <div className="album" >
-                <div>{albumDataInfo}</div>
-            </div>
-        );
-    }
+    return (
+      <div>
+        {renderArtists()}
+        {renderGenres()}
+        {renderImages()}
+      </div>
+    );
+  }
 }
 
 export default Album;
 
-// import SingleData from "./SingleData"
+// import React, { Component } from "react";
 
+// import AlbumInfo from "./AlbumsInfo";
 
-//                 render() {
-//                     return (
-//                         <div className="single-release" >
-//                             <AlbumInfo single={SingleData}></AlbumInfo>
-//                             {/* <div>{releaseList}</div> */}
-//                         </div>
-//                     );
-//                 }
+// class Album extends Component {
+//   state = {
+//     album: []
+//   };
+
+//   componentDidMount() {
+//     this.getItem();
+//   }
+//   getItem() {
+//     // fetch('${releaseUrl}')
+//     fetch("https://api.discogs.com/releases/10402242")
+//       .then(results => results.json())
+//       .then(results => this.setState({ album: results }));
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <ul>
+//           {this.state.album.map(function(album, index) {
+//             return (
+//               <div key={index}>
+//                 <h1>{album.artists}</h1>
+//                 <p>{album.genres}</p>
+//               </div>
+//             );
+//           })}
+//         </ul>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Album;
