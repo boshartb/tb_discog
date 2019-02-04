@@ -27,6 +27,7 @@ class Release extends Component {
                             <div classname="title">{this.props.release.title}: </div>
                             <div ckassname="year">{this.props.release.year} </div>
                             <div className="release"> {this.props.release.catno}</div>
+                            <img src="{this.props.release.thumb}" className="release" />
 
                         </p>
                     </ul>

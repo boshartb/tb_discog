@@ -5,6 +5,8 @@ import './ReleasePage.css';
 // import ReleaseFilter from './ReleaseFilter';
 // import ReleaseList from './ReleaseList';
 // import ReleaseSectionPage from './ReleaseSectionFilter';
+import dotenv from 'dotenv';
+dotenv.config();
 
 class ReleasePage extends Component {
 
@@ -16,7 +18,9 @@ class ReleasePage extends Component {
         }
     }
     componentDidMount() {
-        fetch('https://api.discogs.com//labels/528464/releases?page=1&per_page=100')
+        const url = 'https://api.discogs.com//labels/528464/releases?page=1&per_page=100&key=${disc_key}&secret=${disc_secret}'
+
+        fetch(url)
             .then(res => res.json())
             .then(json => {
 
@@ -64,3 +68,4 @@ class ReleasePage extends Component {
 }
 
 export default ReleasePage;
+

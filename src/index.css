@@ -43,7 +43,7 @@ code {
   background-color: black;
 }
 
-.release {
+/* .release {
   background: grey;
   padding: 1rem;
   border-top: 1.5rem solid #e13e45;
@@ -51,8 +51,7 @@ code {
   margin: 2rem;
   overflow: hidden;
   width: calc(33.3% - 4rem);
-
-}
+} */
 
 .releaseg:hover {
   transform: scale(1.05);
