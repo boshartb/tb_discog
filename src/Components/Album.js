@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ArtistComponent from "./ArtistComponent";
-import GenreComponent from "./GenreComponent";
-import ImageComponent from "./ImageComponent";
+import AlbumArtist from "./AlbumArtist";
+import AlbumGenre from "./AlbumGenre";
+import AlbumImage from "./AlbumImage";
 
 class Album extends Component {
   state = {
@@ -11,9 +11,11 @@ class Album extends Component {
     isLoaded: false
   };
 
-  componentDidMount() {
-    const releaseUrl = this.props.releaseUrl
-    // fetch('${releaseUrl}')
+  componentDidMount = () => {
+    // console.log(this.props)
+    // const { releaseUrl } = this.props
+    // console.log(releaseUrl)
+    // fetch(${ url })
     fetch("https://api.discogs.com/releases/10402242")
       .then(res => res.json())
       .then(json => {
@@ -29,13 +31,13 @@ class Album extends Component {
   render() {
     const { artists, images, genres } = this.state;
     const renderArtists = artists.map((artist, id) => (
-      <ArtistComponent artist={artist} key={id} />
+      <AlbumArtist artist={artist} key={id} />
     ));
     const renderGenres = genres.map((genre, id) => (
-      <GenreComponent genre={genre} key={id} />
+      <AlbumGenre genre={genre} key={id} />
     ));
     const renderImages = images.map((image, id) => (
-      <ImageComponent image={image} key={id} />
+      <AlbumImage image={image} key={id} />
     ));
 
     return (

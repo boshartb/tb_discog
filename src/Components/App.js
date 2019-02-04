@@ -8,7 +8,6 @@ import Main from './Main';
 import Events from './Events';
 import Releases from './Releases';
 import Album from './Album';
-import Fruits from "./Fruits"
 
 class App extends Component {
   // app state
@@ -38,7 +37,6 @@ class App extends Component {
 
             <div>
               <Route exact path="/" component={Main} />
-              <Route path="/fruits" component={Fruits} />
               <Route path="/Releases"
                 render={(routeProps) =>
                   (<Releases {...routeProps} selectRelease={this.selectRelease} />)} />

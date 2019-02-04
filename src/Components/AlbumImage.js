@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
-class GenreComponent extends Component {
+
+class AlbumImage extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.genre}</p>
+        <img src="" />
       </div>
     );
   }
 }
 
-export default GenreComponent;
+export default AlbumImage;
