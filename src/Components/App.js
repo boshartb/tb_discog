@@ -12,7 +12,7 @@ import Releases from './Releases';
 import Album from './Album';
 
 dotenv.config();
-console.log(dotenv)
+
 
 class App extends Component {
   // app state
@@ -24,17 +24,11 @@ class App extends Component {
   }
 
 
-
+  "https://api.discogs.com/releases/4450215"
 
   componentDidMount() {
+    fetch(`https://api.discogs.com/labels/528464/releases?page=1&per_page=100&key=${process.env.REACT_APP_TMDB_API_KEY}&secret=${process.env.REACT_APP_TMDB_API_SECRET}`)
 
-
-
-    const url = `https://api.discogs.com//labels/528464/releases?page=1&per_page=100`;
-    // const url = `${process.env.key}`
-
-    console.log(url)
-    fetch(url)
       .then(res => res.json())
       .then(json => {
         console.log(json.releases)

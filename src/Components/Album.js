@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import dotenv from "dotenv";
+
+
+
 import AlbumArtist from "./AlbumArtist";
 import AlbumGenre from "./AlbumGenre";
 import AlbumImage from "./AlbumImage";
+dotenv.config();
 
 class Album extends Component {
   state = {
@@ -10,12 +15,10 @@ class Album extends Component {
     genres: [],
     isLoaded: false
   };
-
   componentDidMount = () => {
-    // console.log(this.props)
     const { releaseUrl } = this.props
-    console.log(releaseUrl)
-    fetch(releaseUrl)
+    fetch(`${releaseUrl}?&key=${process.env.REACT_APP_TMDB_API_KEY}&secret=${process.env.REACT_APP_TMDB_API_SECRET}`)
+
       .then(res => res.json())
       .then(json => {
         this.setState({
