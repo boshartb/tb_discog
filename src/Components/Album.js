@@ -13,10 +13,9 @@ class Album extends Component {
 
   componentDidMount = () => {
     // console.log(this.props)
-    // const { releaseUrl } = this.props
-    // console.log(releaseUrl)
-    // fetch(${ url })
-    fetch("https://api.discogs.com/releases/10402242")
+    const { releaseUrl } = this.props
+    console.log(releaseUrl)
+    fetch(releaseUrl)
       .then(res => res.json())
       .then(json => {
         this.setState({

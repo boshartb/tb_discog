@@ -13,9 +13,32 @@ class App extends Component {
   // app state
   state = {
     releaseUrl: null,
+    release: [],
+    isLoaded: false
+
   }
 
+
+
+
+  componentDidMount() {
+    const url =
+      "https://api.discogs.com//labels/528464/releases?page=1&per_page=100&key=${disc_key}&secret=${disc_secret}";
+
+    fetch(url)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json.releases)
+        this.setState({
+          isLoaded: true,
+          release: json.releases
+        });
+      });
+  }
+
+
   selectReleaseUrl = releaseUrl => {
+    console.log(releaseUrl)
     this.setState({
       releaseUrl: releaseUrl
     })
@@ -39,7 +62,7 @@ class App extends Component {
               <Route exact path="/" component={Main} />
               <Route path="/Releases"
                 render={(routeProps) =>
-                  (<Releases {...routeProps} selectRelease={this.selectRelease} />)} />
+                  (<Releases release={this.state.release} {...routeProps} selectRelease={this.selectRelease} />)} />
               <Route path="/events" component={Events} />
               <Route path="/album" render={(routeProps) => (<Album {...routeProps} releaseUrl={this.state.releaseUrl} />)} />
             </div>
