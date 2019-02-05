@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Redirect, Route } from 'react-router-dom';
+import dotenv from "dotenv";
+
 
 
 import Header from './Header';
@@ -8,6 +10,9 @@ import Main from './Main';
 import Events from './Events';
 import Releases from './Releases';
 import Album from './Album';
+
+dotenv.config();
+console.log(dotenv)
 
 class App extends Component {
   // app state
@@ -22,9 +27,13 @@ class App extends Component {
 
 
   componentDidMount() {
-    const url =
-      "https://api.discogs.com//labels/528464/releases?page=1&per_page=100&key=${disc_key}&secret=${disc_secret}";
 
+
+
+    const url = `https://api.discogs.com//labels/528464/releases?page=1&per_page=100`;
+    // const url = `${process.env.key}`
+
+    console.log(url)
     fetch(url)
       .then(res => res.json())
       .then(json => {
