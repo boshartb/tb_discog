@@ -1,21 +1,18 @@
 body {
   margin: 0;
   padding: 0;
-  font-family:  "Verdana", "Arial", "Helvetica", sans-serif;
+  font-family: "Verdana", "Arial", "Helvetica", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-  color:  #9e9e9e;
+  color: #9e9e9e;
 }
-
-
-
 
 body {
   font-size: 15px;
 }
 
- a:hover {
+a:hover {
   background-color: red;
 }
 
@@ -40,34 +37,33 @@ img {
 }
 
 .release-thumb {
-  margin-top: 1em;  
+  margin-top: 1em;
   height: 180px;
   width: auto;
 }
 
 .release-info {
   border-bottom: double;
- border-bottom-color: #9e9e9e;
+  border-bottom-color: #9e9e9e;
 }
 
 .album-image {
-  margin-top: 1em;  
+  margin-top: 1em;
   max-height: 580px;
   width: auto;
 }
-
 
 .flex-container {
   padding: 0;
   margin: 0;
   list-style: none;
-  
+
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
+
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
@@ -78,7 +74,7 @@ img {
   width: 200px;
   height: 100px;
   margin-top: 10px;
-  
+
   line-height: 150px;
   color: white;
   font-weight: bold;
@@ -86,9 +82,14 @@ img {
   text-align: center;
 }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   color: #9e9e9e;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 .header-banner {
@@ -108,20 +109,30 @@ a, a:link, a:visited {
   font-size: 1.5em;
 }
 
-.nav-bar > a, Link {
-  font: white;
+.nav-bar > a,
+link {
+  color: #9e9e9e;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 /* .wrapper {
   display: grid;
   grid-gap: 20px;
 } */
+.nav-bar > a:hover {
+  font: white;
+  background-color: black;
+}
 
 .top {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
     "hero hero cta1"
-    "hero hero cta2"
+    "hero hero cta2";
 }
 
 .events-page {
@@ -133,10 +144,10 @@ a, a:link, a:visited {
 }
 
 .events-page > img {
-max-height: 35em;
-display: flex;
-flex-direction: column;
-align-items: center;
+  max-height: 35em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .events-pag > * {
@@ -149,7 +160,6 @@ align-items: center;
   color: blanchedalmond;
 }
 
-
 .logo {
   background-color: black;
   display: flex;
@@ -157,7 +167,6 @@ align-items: center;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-
 }
 /* Navigation */
 
@@ -197,7 +206,7 @@ align-items: center;
   padding: 10px;
   border: 1px solid white;
   text-align: center;
-  box-shadow: 0 0 4px  rgba(0,0,0,0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
 }
 
@@ -212,7 +221,7 @@ align-items: center;
 
 .album {
   background: white;
-  padding:50px;
+  padding: 50px;
   display: grid;
   grid-template-columns: 400px 1fr;
   align-items: center;
@@ -238,11 +247,16 @@ align-items: center;
   align-items: center;
 }
 
-.gallery h2:before, .gallery h2:after {
+.gallery h2:before,
+.gallery h2:after {
   display: block;
-  content: '';
+  content: "";
   height: 10px;
-  background: linear-gradient(to var(--direction, left), var(--yellow), transparent);
+  background: linear-gradient(
+    to var(--direction, left),
+    var(--yellow),
+    transparent
+  );
 }
 
 .gallery h2:after {
@@ -283,14 +297,13 @@ align-items: center;
   [aria-expanded="true"] .open {
     display: none;
   }
-
 }
 
 @media (max-width: 700px) {
   .top {
     grid-template-areas:
       "hero hero"
-      "cta1 cta2"
+      "cta1 cta2";
   }
   /* About */
   .album {
@@ -303,7 +316,7 @@ align-items: center;
     grid-template-areas:
       "hero"
       "cta1"
-      "cta2"
+      "cta2";
   }
 }
 /* 
