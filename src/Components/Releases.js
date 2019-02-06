@@ -37,13 +37,12 @@ class Releases extends Component {
     ));
 
     return (
-      <div className="releases">
-        <div className="wrapper">
+      <section className="releases">
+        <div className="release">
           <h1>Discogs Release Page </h1>
-
-          <div>{releaseList}</div>
-        </div>
-      </div>
+          {releaseList}
+        </div >
+      </section>
     );
   }
 }

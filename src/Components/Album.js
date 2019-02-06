@@ -44,10 +44,15 @@ class Album extends Component {
 
     return (
       <div>
-        {renderArtists}
-        {renderGenres}
-        {renderImages}
+        <div className="release">
+          <div className="release">
+            <h2>{renderArtists}</h2>
+            <p> {renderGenres}</p>
+            {renderImages}
+          </div>
+        </div>
       </div>
+
     );
   }
 }

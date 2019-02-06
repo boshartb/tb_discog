@@ -19,19 +19,14 @@ class ReleaseInfo extends Component {
         }
 
         return (
-            <div className="release-info">
+            <div className="release-info" >
                 <a onClick={this.handleSubmit}  >
-                    <ul>
-                        <p>
-                            <div classname="artist">{this.props.release.artist}:  </div>
-                            <div classname="title">{this.props.release.title}: </div>
-                            <div ckassname="year">{this.props.release.year} </div>
-                            <div className="release"> {this.props.release.catno}</div>
-                            <img src={this.props.release.thumb} />
-                            {/* <img src={logo} /> */}
-
-                        </p>
-                    </ul>
+                    <img src={this.props.release.thumb} />
+                    <h3 classname="release-artist">{this.props.release.artist}:  </h3>
+                    <p classname="release-title">{this.props.release.title}: </p>
+                    <p ckassname="release-year">{this.props.release.year} </p>
+                    <p className="release-image"> {this.props.release.catno}</p>
+                    {/* <img src={logo} /> */}
                 </a >
             </div >
         );

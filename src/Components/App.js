@@ -24,7 +24,7 @@ class App extends Component {
   }
 
 
-  "https://api.discogs.com/releases/4450215"
+  // "https://api.discogs.com/releases/4450215"
 
   componentDidMount() {
     fetch(`https://api.discogs.com/labels/528464/releases?page=1&per_page=100&key=${process.env.REACT_APP_TMDB_API_KEY}&secret=${process.env.REACT_APP_TMDB_API_SECRET}`)
@@ -49,8 +49,7 @@ class App extends Component {
 
   selectRelease = (releaseUrl) => {
     this.selectReleaseUrl(releaseUrl)
-    // 2. Make sure it routes
-    // redirect from method not workinjg
+
 
   }
   render() {
