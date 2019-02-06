@@ -6,12 +6,15 @@ import dotenv from "dotenv";
 import AlbumArtist from "./AlbumArtist";
 import AlbumGenre from "./AlbumGenre";
 import AlbumImage from "./AlbumImage";
+import AlbumVideo from "./AlbumVideo";
+
 dotenv.config();
 
 class Album extends Component {
   state = {
     artists: [],
     images: [],
+    videos: [],
     genres: [],
     isLoaded: false
   };
@@ -25,18 +28,22 @@ class Album extends Component {
           isLoaded: true,
           artists: json.artists,
           genres: json.genres,
+          videos: json.videos,
           images: json.images,
         });
       });
   }
 
   render() {
-    const { artists, images, genres } = this.state;
+    const { artists, images, genres, videos } = this.state;
     const renderArtists = artists.map((artist, id) => (
       <AlbumArtist artist={artist} key={id} />
     ));
     const renderGenres = genres.map((genre, id) => (
       <AlbumGenre genre={genre} key={id} />
+    ));
+    const renderVideos = videos.map((videos, id) => (
+      <AlbumVideo videos={videos} key={id} />
     ));
     const renderImages = images.map((image, id) => (
       <AlbumImage image={image} key={id} />
@@ -49,6 +56,7 @@ class Album extends Component {
             <h2>{renderArtists}</h2>
             <p> {renderGenres}</p>
             {renderImages}
+            {/* {renderVideos} */}
           </div>
         </div>
       </div>
@@ -58,41 +66,3 @@ class Album extends Component {
 }
 
 export default Album;
-
-// import React, { Component } from "react";
-
-// import AlbumInfo from "./AlbumsInfo";
-
-// class Album extends Component {
-//   state = {
-//     album: []
-//   };
-
-//   componentDidMount() {
-//     this.getItem();
-//   }
-//   getItem() {
-//     // fetch('${releaseUrl}')
-//     fetch("https://api.discogs.com/releases/10402242")
-//       .then(results => results.json())
-//       .then(results => this.setState({ album: results }));
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <ul>
-//           {this.state.album.map(function(album, index) {
-//             return (
-//               <div key={index}>
-//                 <h1>{album.artists}</h1>
-//                 <p>{album.genres}</p>
-//               </div>
-//             );
-//           })}
-//         </ul>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Album;

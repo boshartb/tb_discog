@@ -7,9 +7,10 @@ class Events extends Component {
             <div className="events-page">
                 <h3>Events</h3>
                 <img className="portrait" src="https://assets.bigcartel.com/product_images/231362411/six+year+flier.jpg?auto=format&fit=max&h=1000&w=1000"></img>
+                ~{"\n"}
                 <a href="https://totalblack.bigcartel.com/product/6-years-of-total-black-earlybird-ticket">Buy Ticket Here</a>
 
-            </div>
+            </div >
         );
     }
 }

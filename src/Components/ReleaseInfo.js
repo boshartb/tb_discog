@@ -21,9 +21,9 @@ class ReleaseInfo extends Component {
         return (
             <div className="release-info" >
                 <a onClick={this.handleSubmit}  >
-                    <img src={this.props.release.thumb} />
-                    <h3 classname="release-artist">{this.props.release.artist}:  </h3>
-                    <p classname="release-title">{this.props.release.title}: </p>
+                    <img className="release-thumb" src={this.props.release.thumb} />
+                    <h3 className="release-artist">{this.props.release.artist}:  </h3>
+                    <p className="release-title">{this.props.release.title}: </p>
                     <p ckassname="release-year">{this.props.release.year} </p>
                     <p className="release-image"> {this.props.release.catno}</p>
                     {/* <img src={logo} /> */}

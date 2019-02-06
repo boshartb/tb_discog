@@ -25,8 +25,8 @@ img {
 }
 
 .portrait {
-  max-height: 720px;
-  max-width: 530px;
+  max-height: 1820px;
+  max-width: 1730px;
 }
 
 .landscape {
@@ -37,6 +37,23 @@ img {
 .square {
   height: 75px;
   width: 75px;
+}
+
+.release-thumb {
+  margin-top: 1em;  
+  height: 180px;
+  width: auto;
+}
+
+.release-info {
+  border-bottom: double;
+ border-bottom-color: #9e9e9e;
+}
+
+.album-image {
+  margin-top: 1em;  
+  max-height: 580px;
+  width: auto;
 }
 
 
@@ -116,7 +133,7 @@ a, a:link, a:visited {
 }
 
 .events-page > img {
-max-height: 30em;
+max-height: 35em;
 display: flex;
 flex-direction: column;
 align-items: center;
